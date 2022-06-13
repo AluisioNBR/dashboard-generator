@@ -8,8 +8,11 @@ purple1: #5a03ed
 purple2: #44021e
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 body{
   background-color: #830024;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #App {
@@ -32,30 +35,50 @@ small{
   opacity: .8;
 }
 
+input, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+
 #DashboardConfig{
   grid-area: dashboardConfig;
 
   width: 25rem;
   height: 25rem;
-  background-color: #95003a;
+  background-color: #44021e;
   border: solid 1px #fdfdfd;
   border-radius: 5%;
 }
 
 #DashboardGeneralConfig{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  gap: .8rem;
+}
+
+#DashboardGeneralConfig button, label, input{
+  font-size: 1.3rem;
+}
+
+#DashboardGeneralConfig button{
+  color: #fdfdfd;
+  background-color: #5a03ed;
+  padding: .4rem .8rem;
 }
 
 #DashboardViewer{
   grid-area: dashboardViewer;
+
   width: 45rem;
-  height: 25rem;
+  height: 45rem;
 }
 
-@media(max-width: 720px){
+#DashboardViewer canvas{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media(max-width: 1200px){
   #App {
     display: grid;
     grid-template-areas:
@@ -63,11 +86,16 @@ small{
     "dashboardViewer"
     "dashboardConfig";
     justify-items: center;
+    grid-gap: 1rem;
     text-align: center;
   }
 
   #DashboardViewer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 23rem;
-    height: 15rem;
+    height: 23rem;
   }
 }

@@ -7,7 +7,7 @@ function dashboardContentReducer(state, action){
 }
 
 function submitGeneralConfig(dashboardType: string, state){
-	dashboardType = dashboardType.toLowerCase()
+	dashboardType = dashboardType.toLowerCase().trim()
 	
 	const types = {
 		'linha': 'line',
@@ -25,6 +25,7 @@ function submitGeneralConfig(dashboardType: string, state){
 
 	if(dashboardTypeNoExists)
 		return {
+			type: state.type,
 			data: state.data,
 			options: state.options
 		}

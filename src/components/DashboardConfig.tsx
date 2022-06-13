@@ -38,6 +38,7 @@ function DashboardGeneralConfig(){
           value={dashboardTypeValue}
           title="linha | barra | fatia | rosquinha | radar | ponto"
           placeholder="Ex: linha"
+          required
           onChange={(e) => setDashboardTypeValue(e.target.value)}
         /><br/>
         <small title="linha | barra | fatia | rosquinha | radar | ponto">
