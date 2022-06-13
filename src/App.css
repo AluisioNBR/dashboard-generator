@@ -1,0 +1,73 @@
+/*
+* Paleta de Cores *
+white: #fdfdfd
+red1: #af162a
+red2: #95003a
+red3: #830024
+purple1: #5a03ed
+purple2: #44021e
+*/
+
+body{
+  background-color: #830024;
+}
+
+#App {
+  display: grid;
+  grid-template-areas: "title title" "dashboardConfig dashboardViewer";
+  justify-items: center;
+  text-align: center;
+}
+
+h1{
+  grid-area: title;
+  color: #fdfdfd;
+}
+
+label, small{
+  color: #fdfdfd;
+}
+
+small{
+  opacity: .8;
+}
+
+#DashboardConfig{
+  grid-area: dashboardConfig;
+
+  width: 25rem;
+  height: 25rem;
+  background-color: #95003a;
+  border: solid 1px #fdfdfd;
+  border-radius: 5%;
+}
+
+#DashboardGeneralConfig{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#DashboardViewer{
+  grid-area: dashboardViewer;
+  width: 45rem;
+  height: 25rem;
+}
+
+@media(max-width: 720px){
+  #App {
+    display: grid;
+    grid-template-areas:
+    "title"
+    "dashboardViewer"
+    "dashboardConfig";
+    justify-items: center;
+    text-align: center;
+  }
+
+  #DashboardViewer{
+    width: 23rem;
+    height: 15rem;
+  }
+}
